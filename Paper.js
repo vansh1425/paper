@@ -1,14 +1,14 @@
 class Paper {
-    constructor(x,y){
+    constructor(x,y,r){
         var options={
            ' restitution': 0.3,
             'isStatic' :false,
-            'desity' : 1.2,
+            'density' : 1.2,
             'friction' :0.5
         }
         this.x=x;
         this.y=y
-        this.r=20;
+        this.r=r;
         this.body = Bodies.circle(this.x,this.y,this.r/2,options);
         World.add(world,this.body);
     }
@@ -21,5 +21,6 @@ class Paper {
         stroke("pink");
         strokeWeight(3);
         ellipse(0,0,this.r,this.r);
+        pop();
     }
 }
