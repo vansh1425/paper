@@ -6,6 +6,7 @@ class dustbin {
         this.height=100;
         this.Thickness=20;
         this.angle=0;
+        
 
         this.bottomBody=Bodies.rectangle(this.x,this.y,this.width,this.Thickness,{isStatic:true})
         this.leftWallBody = Bodies.rectangle(this.x-this.width/2,this.y-this.height/2,this.Thickness, this.height, {isStatic:true})
@@ -13,9 +14,11 @@ class dustbin {
 
         this.rightWallBody = Bodies.rectangle(this.x + this.width/2,this.y-this.height/2,this.Thickness, this.height,{isStatic:true})
         Matter.Body.setAngle(this.rightWallBody,-1*this.angle);
+        this.imageBody = Bodies.rectangle(this.x,this.y,this.width/2,this.height/2);
           World.add(world,this.bottomBody);
           World.add(world,this.leftWallBody);
           World.add(world,this.rightWallBody);
+            
     }
     display(){
         var posbottom = this.bottomBody.position;
@@ -29,6 +32,7 @@ class dustbin {
         stroke("red");
         rotate(this.angle);
         rect(0,0,this.Thickness,this.height);
+             
         pop();
 
         push();
