@@ -23,8 +23,8 @@ class Paper {
         strokeWeight(3);
         ellipse(0,0,this.r,this.r);
         imageMode(CENTER);
-        image(this.image, 0, 0, this.width, this.height);
-       
+        image(this.image, 0, 0, 50, 70);
+        
         pop();
     }
 }

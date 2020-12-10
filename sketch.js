@@ -6,10 +6,8 @@ const Body = Matter.Body;
 const Render = Matter.Render;
 var paperobject,groundobject;
 var dustbinobject;
-var world,bin1,bin2,bin3,binImg;
-function preload(){
- binImg = loadImage("dustbin.png");
-}
+var world;
+
 function setup() {
 	createCanvas(1600, 700);
 	rectMode(CENTER);
@@ -17,15 +15,9 @@ function setup() {
 	world = engine.world;
 
 	groundobject=new Ground(width/2,672,width,10);
-	
-   paperobject = new Paper(200,670,40);
-   dustbinobject = createSprite(964,520,20,20);
-   dustbinobject.addImage(binImg);
-   dustbinobject.scale=0.45;
-   
-   bin1 = new dustbin(902,505,10,120);
-   bin2 = new dustbin(962,565,130,10);
-   bin3 = new dustbin(1024,505,10,120);
+  dustbinobject =  new dustbin(1203,590);	
+   paperobject = new Paper(205,670,40);
+   paperobject.scale=0.1;
 
  
    var render =Render.create({
@@ -43,15 +35,12 @@ function setup() {
 
 function draw() {
   rectMode(CENTER);
-  background(0);
+  background("white");
   Engine.update(engine);
   
   paperobject.display();
   dustbinobject.display();
   groundobject.display();
-  bin1.display();
-  bin2.display();
-  bin3.display();
   
 }
 
